@@ -1,2 +1,2 @@
-# Rodriguez_Sanchez_JuanJesus_PROG_Tarea10
-Actualziación del código de la tarea 9 para almacenar los datos en una base de datos
+# Rodriguez_Sanchez_JuanJesus_PROG_Tarea08
+Juan Jesús Rodríguez Sánchez. La tarea consiste en modificar la tarea anterior (tarea07) para que no tenga limitaciones de tamaño utilizando estructuras dinámicas de datos.

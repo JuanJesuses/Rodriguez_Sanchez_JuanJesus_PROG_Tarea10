@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<SplitPane dividerPositions="0.12562814070351758" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" orientation="VERTICAL" prefHeight="600.0" prefWidth="873.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="alquilervehiculos.mvc.vista.iugrafica.controladoresvista.ControladorVentanaPrincipal">
+  <items>
+    <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="21.0" layoutY="2.0" prefHeight="65.0" prefWidth="739.0" text="GESTIÓN DE ALQUILER DE VEHÍCULOS" textAlignment="CENTER" AnchorPane.leftAnchor="21.0">
+               <effect>
+                  <Reflection />
+               </effect>
+               <font>
+                  <Font name="DejaVu Sans Bold" size="30.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="0.4711538461538461" endY="0.19711538461538458" startX="0.27403846153846156" startY="0.46634615384615385">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="#5859c4ed" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+         </children></AnchorPane>
+    <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+         <children>
+            <TabPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="-81.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="0.0">
+              <tabs>
+                <Tab text="ALQUILERES">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <SplitPane dividerPositions="0.20202020202020202" layoutX="15.0" layoutY="18.0" orientation="VERTICAL" prefHeight="177.0" prefWidth="339.0">
+                                <items>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="31.0" prefWidth="338.0" />
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="90.0" prefWidth="337.0">
+                                       <children>
+                                          <GridPane layoutY="3.0" prefHeight="59.0" prefWidth="330.0">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="159.0" minWidth="10.0" prefWidth="117.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="216.0" minWidth="10.0" prefWidth="213.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints maxHeight="79.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+                                              <RowConstraints maxHeight="147.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="19.0" prefWidth="165.0" text="CLIENTE">
+                                                   <font>
+                                                      <Font name="DejaVu Sans Bold" size="15.0" />
+                                                   </font>
+                                                   <padding>
+                                                      <Insets right="5.0" />
+                                                   </padding>
+                                                </Label>
+                                                <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="19.0" prefWidth="167.0" text="MATRÍCULA" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font name="DejaVu Sans Bold" size="15.0" />
+                                                   </font>
+                                                   <padding>
+                                                      <Insets right="5.0" />
+                                                   </padding>
+                                                </Label>
+                                                <TextField fx:id="tfDniAlquiler" GridPane.columnIndex="1" />
+                                                <TextField fx:id="tfMatriculaAlquiler" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                             </children>
+                                          </GridPane>
+                                          <HBox alignment="TOP_RIGHT" layoutX="13.0" layoutY="68.0" prefHeight="65.0" prefWidth="324.0">
+                                             <children>
+                                                <Button fx:id="btIniciarAlquiler" mnemonicParsing="false" onAction="#iniciarAlquiler" prefHeight="63.0" prefWidth="117.0" text="INICIAR ALQUILER" wrapText="true">
+                                                   <HBox.margin>
+                                                      <Insets right="30.0" />
+                                                   </HBox.margin>
+                                                   <font>
+                                                      <Font name="DejaVu Sans Bold" size="15.0" />
+                                                   </font>
+                                                </Button>
+                                                <Button fx:id="btCerrarAlquiler" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#cerrarAlquiler" prefHeight="62.0" prefWidth="118.0" text="CERRAR ALQUILER" wrapText="true">
+                                                   <font>
+                                                      <Font name="DejaVu Sans Bold" size="15.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets right="8.0" />
+                                                   </HBox.margin>
+                                                </Button>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </AnchorPane>
+                                </items>
+                              </SplitPane>
+                              <TableView fx:id="tAlquileresInicio" layoutX="13.0" layoutY="215.0" prefHeight="243.0" prefWidth="840.0">
+                                <columns>
+                                  <TableColumn fx:id="tcFecha" prefWidth="199.0" text="FECHA" />
+                                  <TableColumn fx:id="tcDias" prefWidth="82.0" text="DÍAS" />
+                                    <TableColumn fx:id="tcPrecio" prefWidth="115.0" text="PRECIO" />
+                                    <TableColumn fx:id="tcClienteAlquiler" minWidth="9.0" prefWidth="280.0" text="CLIENTE" />
+                                    <TableColumn fx:id="tcVehiculoAlquiler" prefWidth="163.0" text="VEHÍCULO" />
+                                </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                              <Label layoutX="365.0" layoutY="140.0" text="INFORMES:" />
+                              <Label layoutX="259.0" layoutY="255.0" text="." />
+                              <HBox layoutX="367.0" layoutY="174.0" prefHeight="18.0" prefWidth="252.0" spacing="25.0">
+                                 <children>
+                                    <RadioButton fx:id="rbListadoAlquileresAbiertos" layoutX="200.0" layoutY="229.0" mnemonicParsing="false" text="MOSTRAR ALQUILERES ABIERTOS" />
+                                 </children>
+                              </HBox>
+                              <Button fx:id="btMostrarAlquileres" layoutX="623.0" layoutY="161.0" mnemonicParsing="false" onAction="#accionAlquiler" prefHeight="46.0" prefWidth="87.0" text="Mostrar">
+                                 <font>
+                                    <Font name="DejaVu Sans Bold" size="14.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="CLIENTES">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Accordion layoutX="14.0" layoutY="14.0" prefHeight="334.0" prefWidth="854.0">
+                                <panes>
+                                  <TitledPane animated="false" prefHeight="275.0" prefWidth="490.0" text="ALTA CLIENTES">
+                                       <content>
+                                          <Pane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <GridPane prefHeight="150.0" prefWidth="496.0">
+                                                  <columnConstraints>
+                                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="242.0" minWidth="10.0" prefWidth="160.0" />
+                                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="336.0" minWidth="10.0" prefWidth="336.0" />
+                                                  </columnConstraints>
+                                                  <rowConstraints>
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                  </rowConstraints>
+                                                   <children>
+                                                      <Label alignment="TOP_LEFT" text="NOMBRE" GridPane.halignment="RIGHT">
+                                                         <GridPane.margin>
+                                                            <Insets right="10.0" />
+                                                         </GridPane.margin>
+                                                      </Label>
+                                                      <Label text="DNI" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                                         <GridPane.margin>
+                                                            <Insets right="10.0" />
+                                                         </GridPane.margin>
+                                                      </Label>
+                                                      <Label text="DIRECCIÓN" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                                                         <GridPane.margin>
+                                                            <Insets right="10.0" />
+                                                         </GridPane.margin>
+                                                      </Label>
+                                                      <Label text="LOCALIDAD" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                                                         <GridPane.margin>
+                                                            <Insets right="10.0" />
+                                                         </GridPane.margin>
+                                                      </Label>
+                                                      <Label text="CÓDIGO POSTAL" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+                                                         <GridPane.margin>
+                                                            <Insets right="10.0" />
+                                                         </GridPane.margin>
+                                                      </Label>
+                                                      <TextField fx:id="tfNombre" onKeyTyped="#compruebaNombre" GridPane.columnIndex="1" />
+                                                      <TextField fx:id="tfDni" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                      <TextField fx:id="tfDireccion" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                      <TextField fx:id="tfLocalidad" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                      <TextField fx:id="tfCodigoPostal" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                   </children>
+                                                </GridPane>
+                                                <HBox alignment="CENTER_RIGHT" layoutX="160.0" layoutY="150.0" prefHeight="71.0" prefWidth="336.0">
+                                                   <children>
+                                                      <Button fx:id="btAceptarCliente" mnemonicParsing="false" onAction="#anadirCliente" text="ACEPTAR">
+                                                         <HBox.margin>
+                                                            <Insets right="20.0" />
+                                                         </HBox.margin>
+                                                      </Button>
+                                                      <Button fx:id="btCancelarCliente" mnemonicParsing="false" onAction="#cancelarCliente" text="CANCELAR" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </Pane>
+                                       </content>
+                                       <font>
+                                          <Font name="DejaVu Sans Bold" size="13.0" />
+                                       </font>
+                                    </TitledPane>
+                                  <TitledPane animated="false" text="BUSCAR / ELIMINAR CLIENTE">
+                                       <font>
+                                          <Font name="DejaVu Sans Bold" size="13.0" />
+                                       </font>
+                                       <content>
+                                          <Pane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <RadioButton fx:id="rbBuscarCliente" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#rbBuscarClienteSeleccionado" text="BUSCAR CLIENTE" />
+                                                <RadioButton fx:id="rbEliminarCliente" layoutX="182.0" layoutY="14.0" mnemonicParsing="false" onAction="#rbEliminarClienteSeleccionado" text="ELIMINAR CLIENTE" />
+                                                <VBox fx:id="vbBuscarCliente" disable="true" layoutX="11.0" layoutY="60.0" prefHeight="141.0" prefWidth="218.0">
+                                                   <children>
+                                                      <Label text="INTRODUZCA EL DNI:" />
+                                                      <TextField fx:id="tfBuscarCliente" prefHeight="15.0" prefWidth="182.0" />
+                                                      <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                                                         <children>
+                                                            <Button fx:id="btAceptarBuscarCliente" mnemonicParsing="false" onAction="#accionCliente" text="Aceptar" />
+                                                            <Button fx:id="btCancelarBuscarCliente" alignment="CENTER" mnemonicParsing="false" onAction="#cancelarCliente" text="Cancelar" />
+                                                         </children>
+                                                         <VBox.margin>
+                                                            <Insets />
+                                                         </VBox.margin>
+                                                      </HBox>
+                                                   </children>
+                                                </VBox>
+                                                <AnchorPane layoutX="352.0" layoutY="23.0" prefHeight="200.0" prefWidth="492.0">
+                                                   <children>
+                                                      <GridPane layoutX="-5.0" layoutY="-2.0" prefHeight="200.0" prefWidth="492.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                        <columnConstraints>
+                                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="240.0" minWidth="10.0" prefWidth="143.0" />
+                                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="350.0" minWidth="10.0" prefWidth="349.0" />
+                                                        </columnConstraints>
+                                                        <rowConstraints>
+                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        </rowConstraints>
+                                                         <children>
+                                                            <Label text="Nombre" />
+                                                            <Label text="DNI" GridPane.rowIndex="1" />
+                                                            <Label text="Dirección" GridPane.rowIndex="2" />
+                                                            <Label text="Localidad" GridPane.rowIndex="3" />
+                                                            <Label text="Código Postal" GridPane.rowIndex="4" />
+                                                            <TextField fx:id="tfNBuscarCliente" GridPane.columnIndex="1" />
+                                                            <TextField fx:id="tfDBuscarCliente" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                            <TextField fx:id="tfDrBuscarCliente" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                            <TextField fx:id="tfLBuscarCliente" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                            <TextField fx:id="tfCpBuscarCliente" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                         </children>
+                                                      </GridPane>
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                          </Pane>
+                                       </content>
+                                    </TitledPane>
+                                    <TitledPane animated="false" text="LISTADO DE CLIENTES">
+                                      <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TableView fx:id="tClientes" layoutX="4.0" layoutY="3.0" prefHeight="247.0" prefWidth="851.0">
+                                                  <columns>
+                                                    <TableColumn fx:id="tcNombre" prefWidth="195.0" text="NOMBRE" />
+                                                    <TableColumn fx:id="tcDni" prefWidth="159.0" text="DNI" />
+                                                      <TableColumn fx:id="tcDireccion" prefWidth="211.0" text="DIRECCIÓN" />
+                                                      <TableColumn fx:id="tcLocalidad" prefWidth="149.0" text="LOCALIDAD" />
+                                                      <TableColumn fx:id="tcCodigoPostal" prefWidth="136.0" text="CÓDIGO POSTAL" />
+                                                  </columns>
+                                                   <columnResizePolicy>
+                                                      <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                   </columnResizePolicy>
+                                                </TableView>
+                                             </children>
+                                          </AnchorPane>
+                                      </content>
+                                       <font>
+                                          <Font name="DejaVu Sans Bold" size="13.0" />
+                                       </font>
+                                    </TitledPane>
+                                </panes>
+                              </Accordion>
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab fx:id="tbVehiculos" text="VEHÍCULOS">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Accordion prefHeight="397.0" prefWidth="871.0">
+                                <panes>
+                                  <TitledPane animated="false" prefHeight="278.0" prefWidth="871.0" text="ALTA VEHÍCULOS">
+                                       <font>
+                                          <Font name="DejaVu Sans Bold" size="13.0" />
+                                       </font>
+                                       <content>
+                                          <Pane prefHeight="284.0" prefWidth="869.0">
+                                             <children>
+                                                <GridPane layoutX="-1.0" layoutY="3.0" prefHeight="200.0" prefWidth="440.0">
+                                                  <columnConstraints>
+                                                    <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="213.0" minWidth="10.0" prefWidth="148.0" />
+                                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="302.0" minWidth="10.0" prefWidth="295.0" />
+                                                  </columnConstraints>
+                                                  <rowConstraints>
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                  </rowConstraints>
+                                                   <children>
+                                                      <Label text="Matrícula">
+                                                         <GridPane.margin>
+                                                            <Insets right="10.0" />
+                                                         </GridPane.margin>
+                                                      </Label>
+                                                      <Label text="Marca" GridPane.rowIndex="1">
+                                                         <GridPane.margin>
+                                                            <Insets right="10.0" />
+                                                         </GridPane.margin>
+                                                      </Label>
+                                                      <Label text="Modelo" GridPane.rowIndex="2">
+                                                         <GridPane.margin>
+                                                            <Insets right="10.0" />
+                                                         </GridPane.margin>
+                                                      </Label>
+                                                      <Label text="Cilindrada" GridPane.rowIndex="3">
+                                                         <GridPane.margin>
+                                                            <Insets right="10.0" />
+                                                         </GridPane.margin>
+                                                      </Label>
+                                                      <Label text="Número de Plazas" GridPane.rowIndex="4">
+                                                         <GridPane.margin>
+                                                            <Insets right="10.0" />
+                                                         </GridPane.margin>
+                                                      </Label>
+                                                      <Label text="PMA" GridPane.rowIndex="5">
+                                                         <GridPane.margin>
+                                                            <Insets right="10.0" />
+                                                         </GridPane.margin>
+                                                      </Label>
+                                                      <TextField fx:id="tFMatricula" prefHeight="25.0" prefWidth="249.0" GridPane.columnIndex="1" />
+                                                      <TextField fx:id="tFMarca" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                      <TextField fx:id="tFModelo" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                      <TextField fx:id="tFCilindrada" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                      <TextField fx:id="tFNumeroP" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                      <TextField fx:id="tFPma" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                                   </children>
+                                                </GridPane>
+                                                <HBox alignment="CENTER_RIGHT" layoutX="275.0" layoutY="271.0" prefHeight="41.0" prefWidth="165.0" spacing="15.0">
+                                                   <children>
+                                                      <Button fx:id="btAceptarVehiculo" mnemonicParsing="false" onAction="#anadirVehiculo" text="Aceptar" />
+                                                      <Button fx:id="btCancelarVehiculo" mnemonicParsing="false" text="Cancelar" />
+                                                   </children>
+                                                </HBox>
+                                                <Pane layoutX="471.0" layoutY="16.0" prefHeight="142.0" prefWidth="200.0">
+                                                   <children>
+                                                      <RadioButton fx:id="rbTurismo" layoutX="1.0" layoutY="51.0" mnemonicParsing="false" text="Turismo" />
+                                                      <RadioButton fx:id="rbDeCarga" layoutX="1.0" layoutY="83.0" mnemonicParsing="false" text="De Carga" />
+                                                      <RadioButton fx:id="rbAutobus" layoutX="1.0" layoutY="115.0" mnemonicParsing="false" text="Autobús" />
+                                                      <Label layoutX="1.0" layoutY="7.0" prefHeight="29.0" prefWidth="191.0" text="Escoge el Tipo de Vehículo:" />
+                                                   </children>
+                                                </Pane>
+                                             </children>
+                                          </Pane>
+                                       </content>
+                                    </TitledPane>
+                                  <TitledPane alignment="TOP_LEFT" animated="false" text="BUSCAR / ELIMINAR VEHÍCULOS">
+                                       <font>
+                                          <Font name="DejaVu Sans Bold" size="13.0" />
+                                       </font>
+                                       <content>
+                                          <Pane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" layoutX="8.0" layoutY="7.0" prefHeight="55.0" prefWidth="358.0" spacing="15.0">
+                                                   <children>
+                                                      <RadioButton fx:id="rbBuscarVehiculo" mnemonicParsing="false" onAction="#rbBuscarVehiculoSeleccionado" text="BUSCAR VEHÍCULO">
+                                                         <HBox.margin>
+                                                            <Insets left="15.0" />
+                                                         </HBox.margin>
+                                                      </RadioButton>
+                                                      <RadioButton fx:id="rbEliminarVehiculo" mnemonicParsing="false" onAction="#rbEliminarVehiculoSeleccionado" text="ELIMINAR VEHÍCULO" />
+                                                   </children>
+                                                </HBox>
+                                                <VBox fx:id="vbBuscarVehiculo" layoutX="24.0" layoutY="59.0" prefHeight="141.0" prefWidth="218.0" spacing="5.0">
+                                                   <children>
+                                                      <Label text="INTRODUZCA LA MATRÍCULA:" />
+                                                      <TextField fx:id="tfBuscarMatricula" />
+                                                      <HBox alignment="CENTER_RIGHT" prefHeight="79.0" prefWidth="218.0" spacing="15.0">
+                                                         <children>
+                                                            <Button fx:id="btAceptarBuscarVehiculo" mnemonicParsing="false" onAction="#accionVehiculo" text="Aceptar" />
+                                                            <Button fx:id="btCancelarBuscarVehiculo" mnemonicParsing="false" onAction="#cancelarVehiculo" text="Cancelar" />
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                </VBox>
+                                                <GridPane layoutX="428.0" layoutY="35.0" prefHeight="210.0" prefWidth="316.0">
+                                                  <columnConstraints>
+                                                    <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="152.0" minWidth="10.0" prefWidth="131.0" />
+                                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="185.0" minWidth="10.0" prefWidth="185.0" />
+                                                  </columnConstraints>
+                                                  <rowConstraints>
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                  </rowConstraints>
+                                                   <children>
+                                                      <Label text="Tipo de Vehículo">
+                                                         <GridPane.margin>
+                                                            <Insets />
+                                                         </GridPane.margin>
+                                                      </Label>
+                                                      <Label text="Matrícula" GridPane.rowIndex="1" />
+                                                      <Label text="Marca" GridPane.rowIndex="2" />
+                                                      <Label text="Modelo" GridPane.rowIndex="3" />
+                                                      <Label text="Cilindrada" GridPane.rowIndex="4" />
+                                                      <Label text="Número de Plazas" GridPane.rowIndex="5" />
+                                                      <Label text="PMA" GridPane.rowIndex="6" />
+                                                      <TextField fx:id="tfTipoVehiculo" GridPane.columnIndex="1" />
+                                                      <TextField fx:id="tfMatriculaBuscarVehiculo" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                      <TextField fx:id="tfMarcaBuscarVehiculo" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                      <TextField fx:id="tfModeloBuscarVehiculo" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                      <TextField fx:id="tfCilindradaBuscarVehiculo" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                      <TextField fx:id="tfNumPlazasBuscarVehiculo" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                                      <TextField fx:id="tfPmaBuscarVehiculo" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                                   </children>
+                                                </GridPane>
+                                             </children>
+                                          </Pane>
+                                       </content>
+                                    </TitledPane>
+                                    <TitledPane animated="false" prefHeight="281.0" prefWidth="871.0" text="LISTADO DE VEHÍCULOS">
+                                      <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TableView fx:id="tVehiculos" layoutX="4.0" layoutY="4.0" prefHeight="310.0" prefWidth="862.0">
+                                                  <columns>
+                                                    <TableColumn fx:id="tcTipoVehiculo" prefWidth="160.0" text="TIPO DE VEHÍCULO" />
+                                                    <TableColumn fx:id="tcMatricula" prefWidth="96.0" text="MATRÍCULA" />
+                                                      <TableColumn fx:id="tcMarca" prefWidth="161.0" text="MARCA" />
+                                                      <TableColumn fx:id="tcModelo" prefWidth="145.0" text="MODELO" />
+                                                      <TableColumn fx:id="tcCilindrada" prefWidth="102.0" text="CILINDRADA" />
+                                                      <TableColumn fx:id="tcNPlazas" prefWidth="112.0" text="Nº DE PLAZAS" />
+                                                      <TableColumn fx:id="tcPma" prefWidth="81.0" text="PMA" />
+                                                  </columns>
+                                                   <columnResizePolicy>
+                                                      <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                   </columnResizePolicy>
+                                                </TableView>
+                                             </children></AnchorPane>
+                                      </content>
+                                       <font>
+                                          <Font name="DejaVu Sans Bold" size="13.0" />
+                                       </font>
+                                    </TitledPane>
+                                </panes>
+                              </Accordion>
+                           </children></AnchorPane>
+                    </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children></AnchorPane>
+  </items>
+</SplitPane>
